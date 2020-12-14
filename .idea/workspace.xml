@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b08e3c7-415b-4b36-8ce8-5856a92d3db5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/6장_문자열 조작/key.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/6장_문자열 조작/유효한 펠린드롬.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/python_tip.md" afterDir="false" />
