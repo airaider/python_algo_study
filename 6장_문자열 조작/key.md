@@ -32,3 +32,6 @@
    `collections.Counter()` -> 객체의 빈도수를 key, value 값으로 지님
 
    `counts.most_common(1)` -> 가장 빈도수 높은 객체를 return
+
+
+8. `re.sub(r'[^\w]', ' ', paragraph)` -> 문자 이외의 값을 빈칸으로 치환
