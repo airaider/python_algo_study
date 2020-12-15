@@ -1,20 +1,18 @@
-#투 포인터
-def solution1(s : list[str]):
-    left = 0
-    right = len(s)-1
-    while left<right:
-        s[left], s[right] = s[right], s[left]
-        left+=1
-        right-=1
-    print(s)
+#https://leetcode.com/problems/reorder-data-in-log-files/
 
-#파이썬 내장 함수
-def solution2(s : list[str]):
-    print(s)
-    print(s[::-1])
-    s.reverse()
-    print(s)
+#투 포인터
+def solution(logs : list[str]):
+    digits = []
+    letters = []
+    for log in logs:
+        if log.split()[1].isdigit():
+            digits.append(log)
+        else:
+            letters.append(log)
+#key는 x.split()[1:] 식별자를 제외한 [1:] 이후를 키로 지정, 만약 동일시에는 x.split()[0] 식별자로 순서 지정
+    letters.sort(key =lambda x: (x.split()[1:], x.split()[0]))
+    print(letters+digits)
 
 if __name__ == '__main__':
-    solution1(["h", "e", "l", "l", "o"])
-    solution1(["H", "a", "n", "n", "a", "h"])
+    logs = ["dig1 8 1 5 1", "let1 art can", "dig2 3 6", "let2 own kit dig", "let3 art zero"]
+    solution(logs)
