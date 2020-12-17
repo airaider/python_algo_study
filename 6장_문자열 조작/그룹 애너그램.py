@@ -3,7 +3,7 @@
 #딕셔너리 자료형
 import collections
 def solution(strs: list[str]):
-    print(strs)
+
     anagrams = collections.defaultdict(list)
     for str in strs:
         anagrams[''.join(sorted(str))].append(str)
