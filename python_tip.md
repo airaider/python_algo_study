@@ -49,6 +49,19 @@ copy()
 
 deepcopy()
 
+<br>
 
+###6. 다익스트라 최단경로 알고리즘
 
-        
+```
+Q = [(0,K)]
+dist = collections.defaultdict(int)
+while Q:
+    time, node = heapq.heappop(Q)
+    if node not in dist:
+        dist[node] = time
+        for v,w in graph[node]:
+            alt = time+w
+            heapq.heappush(Q, (alt, v))
+
+```        
