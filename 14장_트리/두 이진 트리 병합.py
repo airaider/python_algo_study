@@ -15,6 +15,3 @@ def mergeTrees(self, t1: TreeNode, t2: TreeNode) -> TreeNode:
         return node
     else:
         return t1 or t2
-
-
-
