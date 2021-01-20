@@ -1,24 +1,21 @@
-import collections
-import itertools
+import heapq
 
 def solution(food_times, k):
-    cnt = 0
-    N = len(food_times)
-    for _ in range(k):
-        if cnt==N:
-            cnt = 0
-        if food_times[cnt]==0:
-            cnt+=1
-        if cnt==N:
-            cnt = 0
-        food_times[cnt] -= 1
-        cnt+=1
-    print(food_times)
-    if cnt==N:
-        cnt=1
-    else: cnt+=1
-    print(cnt)
-    return
+    food = [(food, idx) for idx, food in enumerate(food_times, 1)]
+    heapq.heapify(food)
+
+    small_food = food[0][0]
+    prev_food = 0
+    while k - ((small_food - prev_food) * len(food)) >=0:
+        k -= ((small_food - prev_food) * len(food))
+        prev_food, idx = heapq.heappop(food)
+        if not food:
+            return -1
+        small_food = food[0][0]
+    answer = sorted(food, key=lambda x:x[1])
+    print(answer[k%len(answer)][1])
+
+    return answer[k%len(answer)][1]
 
 
 if __name__ == '__main__':
