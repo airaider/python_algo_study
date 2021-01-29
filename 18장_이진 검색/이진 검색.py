@@ -1,5 +1,5 @@
 import collections
-
+import bisect
 
 def solution(nums, target):
     left = 0
@@ -24,7 +24,16 @@ def solution1(nums, target):
     except ValueError:
         return -1
 
+def solution2(nums, target):
+    i = bisect.bisect_left(nums, target)
+    if i < len(nums) and nums[i] == target:
+        print(i)
+        return
+    else:
+        return -1
+
 if __name__ == '__main__':
     nums = [-1,0,3,5,9,12]
     target = 9
+    solution2(nums, target)
     solution(nums, target)
