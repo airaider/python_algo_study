@@ -7,7 +7,8 @@ def solution(board):
         for j in range(len(board[0])-1):
             if board[i][j] != 0 and board[i+1][j+1] != 0:
                 board[i+1][j+1] = min(board[i][j], board[i+1][j], board[i][j+1])+1
-
+    for b in board:
+        print(max(b))
     return max(itertools.chain(*board))**2
 
 
