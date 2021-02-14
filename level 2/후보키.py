@@ -1,8 +1,7 @@
 import itertools
 
-def solution(relation):
-    answer = 0
 
+def solution(relation):
     for r in relation:
         print(r)
 
@@ -10,7 +9,7 @@ def solution(relation):
     print(temp)
 
     candidates = []
-    for i in range(1, len(temp)+1):
+    for i in range(1, len(temp) + 1):
         candidates.extend(itertools.combinations(range(len(temp)), i))
     print(candidates)
 
@@ -29,17 +28,11 @@ def solution(relation):
         for j in range(i + 1, len(final)):
             if len(final[i]) == len(set(final[i]).intersection(set(final[j]))):
                 result.discard(final[j])
-
-
-
-    print(result)
-
-
-
-
-    return answer
+    print(len(result))
+    return len(result)
 
 
 if __name__ == '__main__':
-    relation = [["100","ryan","music","2"],["200","apeach","math","2"],["300","tube","computer","3"],["400","con","computer","4"],["500","muzi","music","3"],["600","apeach","music","2"]]
+    relation = [["100", "ryan", "music", "2"], ["200", "apeach", "math", "2"], ["300", "tube", "computer", "3"],
+                ["400", "con", "computer", "4"], ["500", "muzi", "music", "3"], ["600", "apeach", "music", "2"]]
     solution(relation)
