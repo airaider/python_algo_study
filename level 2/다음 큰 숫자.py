@@ -1,12 +1,8 @@
-import collections
-
 def solution(n):
-    point = collections.Counter(bin(78))['1']
-    while True:
-        n+=1
-        if point==collections.Counter(bin(n))['1']:
-            print(n)
-            return n
+    c = bin(n).count('1')
+    for i in range(n+1, 10000001):
+        if bin(i).count('1') == c:
+            return i
 
 
 if __name__ == '__main__':
