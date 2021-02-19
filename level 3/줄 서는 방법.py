@@ -1,14 +1,17 @@
-import itertools
+import math
 
 def solution(n, k):
     answer = []
     people = [i for i in range(1, n+1)]
     print(people)
-    a = itertools.permutations(people, n)
 
-
-    for i in a:
-        print(i)
+    while n!=0:
+        fact = math.factorial(n-1)
+        answer.append(people.pop((k-1)//fact))
+        print(fact)
+        n=n-1
+        k%=fact
+    print(answer)
     return answer
 
 
