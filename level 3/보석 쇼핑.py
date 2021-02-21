@@ -1,30 +1,30 @@
 import collections
 
+
 def solution(gems):
-    answer = []
+    n = len(set(gems))
+    answer = [0, len(gems)-1]
+    start = end = 0
+    dic1 = collections.defaultdict(int)
+    dic1[gems[0]]=1
 
-    dia = collections.defaultdict()
-    need = len(set(gems))
-    
-
-    left = start = end = 0
-    for right, gem in enumerate(gems, 1):
-        if gem in need:
-            need.remove(gem)
-            kind-=1
-
-        if not kind:
-            while left<right and gems[left] not in need:
-                need.add(gems[left])
-                left+=1
-
-            if not end or right-left <= end-start:
-                start, end = left, right
-                need.add(gems[left])
-                kind+=1
-                left+=1
-    print(start-1, end-1)
-
+    while start < len(gems) and end<len(gems):
+        if len(dic1) == n:
+            if answer[1]-answer[0]> end-start:
+                answer[0] = start
+                answer[1] = end
+            dic1[gems[start]]-=1
+            if dic1[gems[start]]==0:
+                del dic1[gems[start]]
+            start += 1
+        else:
+            end += 1
+            if end == len(gems):
+                break
+            dic1[gems[end]]+=1
+    answer[0]+=1
+    answer[1] += 1
+    print(answer)
     return answer
 
 
