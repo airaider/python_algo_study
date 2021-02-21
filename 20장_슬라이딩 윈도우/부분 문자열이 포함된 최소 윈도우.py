@@ -11,7 +11,6 @@ def solution(s,t):
     left = start = end = 0
 
     for right, char in enumerate(s, 1):
-
         missing -= need[char] > 0
         need[char]-=1
 
