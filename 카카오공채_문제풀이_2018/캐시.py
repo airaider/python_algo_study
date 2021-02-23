@@ -1,5 +1,6 @@
 import collections
 
+
 def solution(cacheSize,cities):
     cache = collections.deque(maxlen=cacheSize)
     time = 0
@@ -14,6 +15,7 @@ def solution(cacheSize,cities):
             time+=5
     print(time)
     return
+
 
 if __name__ == '__main__':
     cacheSize = 3
