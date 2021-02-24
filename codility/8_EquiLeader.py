@@ -70,5 +70,5 @@ def solution(A):
 
 if __name__ == '__main__':
     A = [4,3,4,4,4,2]
-    
+
     solution(A)
