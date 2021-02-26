@@ -1,20 +1,48 @@
 def solution(A):
+    print(A)
+    if not A: return -1
+    answer = []
+    sum_now = -1001
+    max_sum = -1001
 
-    if len(A) == 1:
-        return A[0]
-
-    sum_now=A[0]
-    max_sum=A[0]
-
-    for i in A[1:]:
-
-        sum_now = max(i, sum_now+i)
+    for i in A:
+        if i < 0:
+            if max_sum != -1001:
+                answer.append(max_sum)
+            sum_now = -1001
+            max_sum = -1001
+            continue
+        sum_now = max(i, sum_now + i)
         max_sum = max(max_sum, sum_now)
-        print(sum_now, max_sum)
-    print(max_sum)
-    pass
+    if max_sum >= 0: answer.append(max_sum)
+    if not answer: return -1
+    return max(answer)
 
 
 if __name__ == '__main__':
-    A = [3,2,-6,4,0]
-    solution(A)
+    A = [1, 2, -3, 4, 5, -6]
+    print(solution(A))
+    A = [-8, 3, 0, 5, -3, 12]
+    print(solution(A))
+    A = [-1, 2, 1, 2, 0, 2, 1, -3, 4, 3, 0, -1]
+    print(solution(A))
+    A = [-1]
+    print(solution(A))
+    A = [2]
+    print(solution(A))
+
+    A = [-1, -1]
+    print(solution(A))
+
+    A = [0, 0, 0, 0, 0]
+    print(solution(A))
+
+    A = [0, 0, 0, 0, 0, -1, 0, 0, 0, -1, 0, -1, 2]
+    print(solution(A))
+
+    A = [-1, 0, -1]
+    print(solution(A))
+    A = [0, -1, 0]
+    print(solution(A))
+    A = [0]
+    print(solution(A))
