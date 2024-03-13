@@ -5,6 +5,9 @@ def solution1(s : list[str]):
 #파이썬 내장 함수
 def solution2(s : list[str]):
     print(s)
+    print(s[::-1])
+    s.reverse()
+    print(s)
 
 if __name__ == '__main__':
     solution1(["h", "e", "l", "l", "o"])

@@ -4,6 +4,22 @@
 import re
 import collections
 def solution(paragraph : str, banned : list[str]):
+
+    words = [word for word in re.sub(r'\W', ' ', paragraph).lower().split() if word not in banned]
+    print(words)
+
+    counts = collections.defaultdict(int)
+    for word in words:
+        counts[word] += 1
+    print(counts.values())
+    print(max(counts.values()))
+
+    print(max(counts, key=counts.get))
+
+    counts = collections.Counter(words)
+    print(counts)
+    print(counts.most_common(1))
+
     print(paragraph, banned)
 
 

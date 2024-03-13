@@ -5,6 +5,9 @@ import collections
 def solution(strs: list[str]):
 
     anagrams = collections.defaultdict(list)
+    for word in strs:
+        anagrams[''.join(sorted(word))].append(word)
+
 
     print(anagrams.values())
 
