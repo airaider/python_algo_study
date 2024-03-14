@@ -4,6 +4,17 @@
 def solution(logs : list[str]):
     digits = []
     letters = []
+
+    for word in logs:
+        if word.startswith("dig"):
+            digits.append(word)
+        elif word.startswith("let"):
+            letters.append(word)
+    print(digits)
+    print(letters)
+
+    letters.sort(key=lambda x: (x.split()[1:], x.split()[0]))
+
     print(letters+digits)
 
 if __name__ == '__main__':
