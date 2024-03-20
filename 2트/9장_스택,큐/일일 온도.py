@@ -2,16 +2,13 @@
 
 #스택
 def solution(T : list[int]):
-    print(T)
     answer = [0] * len(T)
     stack = []
-    current = T[0]
     for i,t in enumerate(T):
-        while stack and t>T[stack[-1]]:
+        while stack and t > T[stack[-1]]:
             last = stack.pop()
-            answer[last]=i-last
+            answer[last] = i-last
         stack.append(i)
-        print(i,t)
     print(answer)
     return True
 
