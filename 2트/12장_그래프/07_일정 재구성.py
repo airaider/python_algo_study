@@ -16,6 +16,7 @@ def solution(tickets):
 
     path=[]
     dfs('JFK')
+    print(path)
     print(path[::-1])
 
 

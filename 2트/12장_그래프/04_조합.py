@@ -11,8 +11,8 @@ def solution(n, k):
             return
         for i in range(idx, n+1):
             visit[cnt] = i
-            dfs(i + 1, cnt + 1)
-    dfs(1, 0)
+            dfs(i+1, cnt+1)
+    dfs(1,0)
     print(results)
 
 # itertools 내장 함수

@@ -4,11 +4,11 @@
 def solution(digits):
 
     def dfs(index, path):
-        if len(digits) == len(path):
+        if len(path) == len(digits):
             answer.append(path)
         for i in range(index, len(digits)):
             for j in dic[digits[i]]:
-                dfs(i + 1, path + j)
+                dfs(i+1, path+j)
 
     dic = {
         "2": "abc", "3": "def", "4": "ghi",

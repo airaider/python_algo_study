@@ -18,13 +18,12 @@ def solution(nums):
 # 매 iteration 나오는대로 append
 def solution1(nums):
     answer = []
-
     def dfs(path, idx):
         answer.append(path[:])
         for i in range(idx, len(nums)):
             dfs(path+[nums[i]], i+1)
-    path = []
-    dfs(path, 0)
+
+    dfs([], 0)
     print(answer)
 
 

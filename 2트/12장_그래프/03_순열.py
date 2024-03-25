@@ -5,14 +5,13 @@ def solution(nums):
     results = []
     visit = []
     def dfs(cnt):
-        if cnt==len(nums):
+        if cnt == len(nums):
             results.append(visit[:])
         for i in nums:
             if i not in visit:
                 visit.append(i)
                 dfs(cnt+1)
                 visit.pop()
-
     dfs(0)
     print(results)
 
@@ -27,4 +26,4 @@ def permut(nums):
 if __name__ == '__main__':
     nums = [1,2,3]
     solution(nums)
-    permut(nums)
+    # permut(nums)
