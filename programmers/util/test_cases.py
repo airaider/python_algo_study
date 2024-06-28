@@ -1,10 +1,9 @@
 from programmers.util.json_converter import convert_table_to_test_cases
 
 table_text = """
-participant completion return
-["leo", "kiki", "eden"] ["eden", "kiki"]   "leo"
-["marina", "josipa", "nikola", "vinko", "filipa"]   ["josipa", "filipa", "marina", "nikola"]   "vinko"
-["mislav", "stanko", "mislav", "ana"]   ["stanko", "ana", "mislav"]    "mislav"
+arr	answer
+[1,1,3,3,0,1,1]	[1,3,0,1]
+[4,4,4,3,3]	[4,3]
 """
 
 test_cases = convert_table_to_test_cases(table_text)
