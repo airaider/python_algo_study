@@ -12,11 +12,12 @@ def solution1(participant, completion):
 def solution(participant, completion):
     participant.sort()
     completion.sort()
-    for i,e in enumerate(completion):
+    for i, e in enumerate(completion):
         if e != participant[i]:
             return participant[i]
     return participant[-1]
 
 
 if __name__ == "__main__":
-    run_tests(solution)
+    solution1([1, 2, 3, 5], [1, 2, 3, 4])
+    # run_tests(solution)
