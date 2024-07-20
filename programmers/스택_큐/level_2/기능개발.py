@@ -4,15 +4,15 @@ import math
 
 def solution(progresses, speeds):
     stack = []
-    for p,s in zip(progresses, speeds):
-        stack.append(math.ceil((100-p)/s))
+    for p, s in zip(progresses, speeds):
+        stack.append(math.ceil((100 - p) / s))
     last = stack[0]
     cnt = 0
-    answer=[]
+    answer = []
     while stack:
         day = stack.pop(0)
-        if day<=last:
-            cnt+=1
+        if day <= last:
+            cnt += 1
         else:
             answer.append(cnt)
             last = day

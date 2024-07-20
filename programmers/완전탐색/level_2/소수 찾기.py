@@ -57,5 +57,7 @@ def solution1(numbers):
     # 소수 개수 계산 및 반환
     return sum(1 for num in num_set if is_prime(num))
 
+
 if __name__ == "__main__":
-    run_tests(solution)
+    print(3**(1/2))
+    # run_tests(solution)

@@ -9,12 +9,11 @@ def solution(k, dungeons):
     answer = 0
     for c in case:
         cnt = 0
-        K = k
         for i in c:
-            if K < dungeons[i][0]:
+            if k < dungeons[i][0]:
                 continue
             else:
-                K -= dungeons[i][1]
+                k -= dungeons[i][1]
                 cnt += 1
         answer = max(answer, cnt)
     return answer
