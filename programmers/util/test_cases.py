@@ -1,8 +1,8 @@
 from programmers.util.json_converter import convert_table_to_test_cases
 
 table_text = """
-genres	plays	return
-["classic", "pop", "classic", "classic", "pop"]	[500, 600, 150, 800, 2500]	[4, 1, 3, 0]
+n	times	return
+6	[7, 10]	28
 """
 
 test_cases = convert_table_to_test_cases(table_text)

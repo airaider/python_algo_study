@@ -1,19 +1,19 @@
 from programmers.util.test_runner import run_tests
 
 from collections import defaultdict
-
-
 def solution(genres, plays):
     cnt = defaultdict(int)
-    info = defaultdict(list)
-    for i, (g, p) in enumerate(zip(genres, plays)):
-        cnt[g] += p
-        info[g].append((i, p))
-    cnt = sorted(cnt.items(), key=lambda x: x[1], reverse=True)
+    order = defaultdict(list)
+    index=0
+    for genre, play in zip(genres, plays):
+        cnt[genre] += play
+        order[genre].append((index, play))
+        index += 1
+    sorted_order = sorted(cnt.items(), key=lambda x: (x[1]), reverse=True)
     answer = []
-    for genre in cnt:
-        sorted_plays = sorted(info[genre[0]], key=lambda x: (-x[1], x[0]))
-        answer.extend(i[0] for i in sorted_plays[:2])
+    for i in sorted_order:
+        a = sorted(order[i[0]], key=lambda x: (-x[1], x[0]))
+        answer.extend(genre[0] for genre in a[:2])
     return answer
 
 
